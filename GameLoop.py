@@ -5,6 +5,8 @@
 #   "mmm" "mmm#" mm#mm  "#mmm" "mmm#"  #mm#
 
 #LOADING LIBRARIES
+
+
 import sys, configparser
 from SimpleGUICS2Pygame import simplegui_lib_fps
 from SimpleGUICS2Pygame import simpleguics2pygame
@@ -46,11 +48,13 @@ monsterAi=MonsterAi(10)
 monsterAi.spawnMonsters()
 
 print("MONSTERS LOADED AND SPAWNED")
-
-
+music.play()
+music.rewind()
+music.set_volume(1)
 
 #--------------GAME-----LOOP-------------------
 def draw(canvas):
+
 
 #========== GAME LOOPS NON MAIN =====================
 

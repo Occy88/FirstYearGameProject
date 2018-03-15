@@ -1,3 +1,5 @@
+from SimpleGUICS2Pygame import simpleguics2pygame
+
 from Classes.Settings import *
 from Classes.Base.Vector import Vector
 
@@ -413,7 +415,8 @@ print("ENVIRONMENT GENERATED")
 # env_l2_list.append(t1)
 
 
-
 # tree = Particle(True, Vector(2500, 2500), Vector(0, 0), 0, Vector(2500, 2500), 200, 0, 0, 0, 'en_l1_tr', spriteDictionary,
 #                 1, False, False, getUid(), 4, 15, 1, 1, 4, 15)
 #
+music = simpleguics2pygame._load_local_sound('Music/main.ogg')
+music.play()
