@@ -9,7 +9,7 @@ Class Id's:
 
 #DISPLAY OPTIONS:
 DEVELOPER_OPTIONS = False #ALL PARTILE BOUNDARIES (NOT RECOMMENDED FOR FPS REASONS
-GOD_MODE=True
+GOD_MODE=False
 SHOW_MONSTER_THOUGHTS=True #pink follow and return range if out of whit rectangle, red is attack range
 SHOW_COLLISION_TECH=True # white = detection of close together objects, Red=intercection of close together objects
 #MAP

@@ -44,7 +44,7 @@ fps.start()
 collHandler=BroadPhaseCollision(200,200)
 #initiate Ai
 print("INITIALISING MONSTER CONTROLLER")
-monsterAi=MonsterAi(10)
+monsterAi=MonsterAi(40)
 monsterAi.spawnMonsters()
 
 print("MONSTERS LOADED AND SPAWNED")
