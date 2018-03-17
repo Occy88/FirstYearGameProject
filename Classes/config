@@ -2,13 +2,13 @@
 developer_options = 0
 
 [CANVAS]
-canvas_width = 1500
-canvas_height = 800
-game_state = False
+canvas_width = 720
+canvas_height = 480
+game_state = True
 
 [NETWORKING]
 config_type = client
-client_ip = 10.2.76.93
+client_ip = localhost
 logging = False
 logging_level = low
 

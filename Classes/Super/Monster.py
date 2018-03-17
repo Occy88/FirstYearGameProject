@@ -22,9 +22,7 @@ class Monster:
         self.operationOrigin=operationOrigin
         self.operationRange=operationRange
         self.attackRange=attackRange
-        print("follow",followDistance)
         self.followDistance=followDistance
-        print(self.followDistance)
         self.returning=False
         self.hasSelectedReturn=False
         self.tier=tier
@@ -144,7 +142,6 @@ class Monster:
         elif self.particle.pos.getX()-self.particle.nextPos.getX()>0 and not self.spriteState==1:
             self.setSpriteState(1)
     def encode(self):
-
         data = {'spriteState': self.spriteState,
                 'clickPosition': {'x': self.clickPosition.x, 'y': self.clickPosition.y}, 'hasFired': self.hasFired,
                 'idObject': self.idObject, 'idClass': self.idClass,
@@ -161,7 +158,7 @@ class Monster:
                 'startRow': self.particle.spriteSheet.startRow, 'endRow': self.particle.spriteSheet.endRow,
                 'endColumn': self.particle.spriteSheet.endColumn,
                 'magic':self.magic,'melee':self.melee,'range':self.range,'life':self.life,'tier':self.tier,'aBack':self.aBack,
-                'external':True,'totalLife':self.totalLife,'operationOrigin':{'x':self.operationOrigin.x,'y':self.operationOrigin.y},'operationRange':{'x':self.operationOrigin.x,'y':self.operationOrigin.y},
+                'external':True,'totalLife':self.totalLife,'operationOrigin':{'x':self.operationOrigin.x,'y':self.operationOrigin.y},'operationRange':{'x':self.operationRange.x,'y':self.operationRange.y},
                 'attackRange':self.attackRange,'followDistance':self.followDistance}
         b=json.dumps(data)
         return data

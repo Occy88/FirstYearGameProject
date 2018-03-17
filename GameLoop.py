@@ -6,7 +6,6 @@
 
 #LOADING LIBRARIES
 
-
 import sys, configparser
 from SimpleGUICS2Pygame import simplegui_lib_fps
 from SimpleGUICS2Pygame import simpleguics2pygame
@@ -43,14 +42,15 @@ fps = simplegui_lib_fps.FPS()
 fps.start()
 collHandler=BroadPhaseCollision(200,200)
 #initiate Ai
+monsterAi=MonsterAi(0)
 print("INITIALISING MONSTER CONTROLLER")
-monsterAi=MonsterAi(40)
+monsterAi=MonsterAi(10)
 monsterAi.spawnMonsters()
 
 print("MONSTERS LOADED AND SPAWNED")
-music.play()
-music.rewind()
-music.set_volume(1)
+# music.play()
+# music.rewind()
+# music.set_volume(1)
 
 #--------------GAME-----LOOP-------------------
 def draw(canvas):
@@ -59,11 +59,9 @@ def draw(canvas):
 #========== GAME LOOPS NON MAIN =====================
 
     if(gameState1.intro):
-        print("intro")
         introLoop(canvas)
 
     if gameState1.main and not gameState2.main:
-        print("waiting")
         waitingLoop(canvas)
 
 
@@ -73,9 +71,10 @@ def draw(canvas):
    # if (config['NETWORKING']['CONFIG_TYPE'] == 'client'):
     ping()
 #--------------RECIEVE ALL OBJECTS-------------------------
-    recieve()
+    for a in range(0,100):
+        recieve()
 #-----------------SEND GAME STATES------------------------
-    communicate(gameState1)
+
 
 
     if(gameState1.main and gameState2.main):
@@ -115,11 +114,7 @@ def draw(canvas):
         # ------------place all objects into list to choose which to draw first, not sure if this is expensive, but we shall try-----------
 
 
-        print("=========================")
-        print(weapon_set.__len__())
-        print(weapon_set_external.__len__())
-        print(monster_set_external.__len__())
-        print(monster_set.__len__())
+
         for en2 in env_l2_list: #draw unmarked objects
             if not en2.drawn:
                 en2.draw(canvas, cam)
@@ -148,7 +143,6 @@ def draw(canvas):
         for en2 in env_l2_list: #draw marked objects and unmark
             if en2.drawn:
                 en2.draw(canvas, cam)
-                # print("DRAWN")
                 en2.drawn=False
             en2.update()
         fps.draw_fct(canvas)
@@ -157,7 +151,6 @@ def draw(canvas):
 
 #===========================SENDING STATES BEFORE GARBAGE COLLECTION=============================================================
         # -----------IN MAIN LOOP NETWORKING-------------------------
-
         for object in weapon_set:
             # don't communicate it if it has been applied lol otherwise it's like continuous aoe damage good luck with that
             if not object.applied and not object.sent:
@@ -171,9 +164,8 @@ def draw(canvas):
         # we don't to thread this as it is a small set
         for player in player_list:
             if player.idObject == playerId:
-                # print(player.particle.vel)
                 communicate(player)
-        print("size:" + str(player_list.__len__()))
+
 
 # ===================== GARBAGE REMOVAL =================================================
         removal_set=set()
@@ -203,8 +195,8 @@ def draw(canvas):
                 removal_set.add(monster)
             if monster.particle.spriteSheet.hasLooped and monster.particle.removeOnAnimationLoop:
                 removal_set.add(monster)
-
         monster_set_external.difference_update(removal_set)
+
         removal_set.clear()
         for monster in monster_set:
             if monster.particle.pos == monster.particle.nextPos and monster.particle.removeOnVelocity0 or monster.remove:

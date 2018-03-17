@@ -111,8 +111,7 @@ def getPlayer(arr):
         if player.idObject == arr['idObject']:
             exists = True
     if not exists:
-        print("player recieved: " + str(arr['idObject']))
-        print("local Player"+str(playerId))
+
         player_list.append(
 
             Player(Vector(arr['pos']['x'],arr['pos']['y']),Vector(arr['vel']['x'],arr['vel']['y']),
@@ -131,7 +130,7 @@ def getPlayer(arr):
 
 
 def getObject(j):
-    arr = json.loads(j)
+    arr = j
 
     if(bool(int(config['DEVELOPER']['DEVELOPER_OPTIONS']))): print("Class ID:" + str(arr['idClass']))
     if(bool(int(config['DEVELOPER']['DEVELOPER_OPTIONS'])) and bool( config['NETWORKING']['LOGGING_LEVEL'] == "high")): print(arr)

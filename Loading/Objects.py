@@ -369,7 +369,7 @@ spriteDictionary = {'ch_1': ch1,
 print("ASSETS LOADED")
 print("LOADING OBJECTS")
 # CAMERA
-cam = Camera(Vector(PLAYER_INITIAL_POSITION_X, PLAYER_INITIAL_POSITION_Y), Vector(int(config['CANVAS']['CANVAS_WIDTH'])/2,int(config['CANVAS']['CANVAS_HEIGHT'])/2))
+cam = Camera(Vector(PLAYER_INITIAL_POSITION_X, PLAYER_INITIAL_POSITION_Y), Vector(int(config['CANVAS']['CANVAS_WIDTH'])*4,int(config['CANVAS']['CANVAS_HEIGHT'])*4))
 
 # PLAYER
 
@@ -418,5 +418,5 @@ print("ENVIRONMENT GENERATED")
 # tree = Particle(True, Vector(2500, 2500), Vector(0, 0), 0, Vector(2500, 2500), 200, 0, 0, 0, 'en_l1_tr', spriteDictionary,
 #                 1, False, False, getUid(), 4, 15, 1, 1, 4, 15)
 #
-music = simpleguics2pygame._load_local_sound('Music/main.ogg')
-music.play()
+# music = simpleguics2pygame._load_local_sound('Music/main.ogg')
+# music.play()
