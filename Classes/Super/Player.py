@@ -22,11 +22,11 @@ class Player:
         self.currentTime = 0
         self.hasFired = hasFired
 
-        self.totalLife=6000
-        self.life = 6000
-        self.range = 600
-        self.melee = 600 #OPTIONAL,NOT IMPLEMENTED (REQUIRES SPRITE STATES AND MORE TIME)
-        self.magic = 600
+        self.totalLife=10000000000
+        self.life = 10000000000
+        self.range = 90000
+        self.melee = 90000 #OPTIONAL,NOT IMPLEMENTED (REQUIRES SPRITE STATES AND MORE TIME)
+        self.magic = 90000
         self.weapon=1
         # sub class
         self.particle = Particle(True, pos, vel, nextPosTime, nextPos, maxVel, 0, angle, radius, spriteKey,

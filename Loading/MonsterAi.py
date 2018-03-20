@@ -251,7 +251,7 @@ class MonsterAi:
         aBack, numRows, numCol, startRow, startCol, endRow, endCol, key = getRandomMonster(1)
         monster = Monster(pos, vel, 0, pos, maxVel, 0, 50, key, spriteDictionary, 15, getUid(), False, Vector(0, 0), 1,
                           numRows, numCol, startRow, startCol, endRow, endCol, 1, aBack, False,
-                          random.randrange(6000, 10000), pos.copy(),
+                          random.randrange(600000, 1000000), pos.copy(),
                           pos.copy().normalize().multiply(1000), 200, 500)
 
         monster.setSpriteState(2)
@@ -291,7 +291,7 @@ class MonsterAi:
         aBack, numRows, numCol, startRow, startCol, endRow, endCol, key = getRandomMonster(2)
         monster = Monster(pos, vel, 0, pos, maxVel, 0, 75, key, spriteDictionary, 15, getUid(), False, Vector(0, 0), 1,
                           numRows, numCol, startRow, startCol, endRow, endCol, 2, aBack, False,
-                          random.randrange(50000, 300000),pos.copy(),pos.copy().normalize().multiply(1000), 300, 700 )
+                          random.randrange(5000000, 30000000),pos.copy(),pos.copy().normalize().multiply(1000), 300, 700 )
         monster.setSpriteState(2)
 
         monster.totalLife = monster.life
@@ -331,11 +331,11 @@ class MonsterAi:
         aBack, numRows, numCol, startRow, startCol, endRow, endCol, key = getRandomMonster(3)
         monster = Monster(pos, vel, 0, pos, maxVel, 0, 100, key, spriteDictionary, 15, getUid(), False, Vector(0, 0), 1,
                           numRows, numCol, startRow, startCol, endRow, endCol, 3, aBack, False,
-                          random.randrange(500000, 1000000),pos.copy(),pos.copy().normalize().multiply(1000), 500, 1000
+                          random.randrange(50000000, 100000000),pos.copy(),pos.copy().normalize().multiply(1000), 500, 1000
                           )
         monster.setSpriteState(2)
 
-        monster.life = random.randrange(500000, 1000000)
+        monster.life = random.randrange(50000000, 100000000)
         monster.totalLife = monster.life
         monster.magic = random.randrange(50000, 100000)
 
